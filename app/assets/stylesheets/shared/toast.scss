@@ -1,0 +1,55 @@
+.toast-container {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  max-width: calc(100% - 2rem);
+
+  .toast {
+    --bs-toast-spacing: 1rem;
+
+    .toast-icon {
+      @extend .bi;
+      margin-right: 0.25rem;
+    }
+
+    .toast-type {
+      margin-right: auto;
+    }
+
+    &.toast-success {
+      .toast-icon {
+        @extend .bi-check-circle;
+      }
+      .toast-icon, .toast-type {
+        color: $green;
+      }
+    }
+
+    &.toast-info {
+      .toast-icon {
+        @extend .bi-info-circle;
+      }
+      .toast-icon, .toast-type {
+        color: $cyan;
+      }
+    }
+
+    &.toast-warning {
+      .toast-icon {
+        @extend .bi-exclamation-circle;
+      }
+      .toast-icon, .toast-type {
+        color: $orange;
+      }
+    }
+
+    &.toast-error {
+      .toast-icon {
+        @extend .bi-exclamation-triangle;
+      }
+      .toast-icon, .toast-type {
+        color: $red;
+      }
+    }
+  }
+}
