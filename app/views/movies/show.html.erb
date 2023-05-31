@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-8">
+    <h1><%= @movie.title %></h1>
+    <div>
+      <span class="text-muted">Year:</span>
+      <%= @movie.year %>
+    </div>
+    <div>
+      <span class="text-muted">Director:</span>
+      <%= @movie.director %>
+    </div>
+    <div>
+      <span class="text-muted">Genre:</span>
+      <%= @movie.genres.map(&:name).join(', ') %>
+    </div>
+    <div>
+      <span class="text-muted">Description:</span>
+      <%= @movie.description %>
+    </div>
+  </div>
+  <div class="col-4">
+    <%= image_tag @movie.image_url, class: "img-fluid", alt: @movie.title %>
+  </div>
+</div>

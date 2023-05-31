@@ -1,0 +1,20 @@
+<div class="card mb-3">
+  <%= image_tag movie.image_url, class: "card-img-top", alt: movie.title %>
+  <div class="card-body">
+    <h5 class="card-title"><%= movie.title %></h5>
+    <p class="card-text">
+      <div>
+        <span class="text-muted">Year:</span>
+        <%= movie.year %>
+      </div>
+      <div>
+        <span class="text-muted">Director:</span>
+        <%= movie.director %>
+      </div>
+      <div>
+        <span class="text-muted">Genre:</span>
+        <%= movie.genres.map(&:name).join(', ') %>
+      </div>
+    </p>
+  </div>
+</div>
