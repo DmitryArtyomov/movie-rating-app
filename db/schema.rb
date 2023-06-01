@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_31_182948) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_31_194632) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -38,10 +38,25 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_31_182948) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "slug", null: false
+    t.integer "reviews_count", default: 0, null: false
+    t.float "average_rating"
+    t.index ["average_rating"], name: "index_movies_on_average_rating"
     t.index ["director"], name: "index_movies_on_director"
     t.index ["slug"], name: "index_movies_on_slug", unique: true
     t.index ["title"], name: "index_movies_on_title"
     t.index ["year"], name: "index_movies_on_year"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "rating", null: false
+    t.text "text"
+    t.bigint "movie_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["movie_id"], name: "index_reviews_on_movie_id"
+    t.index ["user_id", "movie_id"], name: "index_reviews_on_user_id_and_movie_id", unique: true
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -52,10 +67,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_31_182948) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "username", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["username"], name: "index_users_on_username", unique: true
   end
 
   add_foreign_key "movie_genres", "genres"
   add_foreign_key "movie_genres", "movies"
+  add_foreign_key "reviews", "movies"
+  add_foreign_key "reviews", "users"
 end

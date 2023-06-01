@@ -1,0 +1,14 @@
+<div class="card" id="<%= dom_id review %>">
+  <div class="card-body">
+    <div>
+      <%= render 'shared/rating', value: review.rating %>
+      <%= review.user.username %>
+      <span class="text-muted small">
+        <%= l(review.created_at, format: :long) %>
+      </span>
+    </div>
+    <% if review.text.present? %>
+      <div><%= review.text %></div>
+    <% end %>
+  </div>
+</div>

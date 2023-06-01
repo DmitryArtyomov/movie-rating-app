@@ -1,0 +1,13 @@
+<% rounded = (value.to_f * 2.0).round / 2.0 %>
+
+<div class="stars-container">
+  <% rounded.floor.times do %>
+    <div class="star full"></div>
+  <% end %>
+  <% (rounded.ceil - rounded.floor).times do %>
+    <div class="star half"></div>
+  <% end %>
+  <% (5 - rounded.ceil).times do %>
+    <div class="star empty"></div>
+  <% end %>
+</div>

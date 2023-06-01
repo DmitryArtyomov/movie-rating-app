@@ -7,14 +7,14 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <%= link_to "Home", root_path, class: "nav-link #{"active" if current_page?(root_path)}" %>
+          <%= link_to "Movies", root_path, class: "nav-link #{"active" if current_page?(root_path)}" %>
         </li>
       </ul>
       <ul class="navbar-nav">
         <% if user_signed_in? %>
           <li class="nav-item dropdown account-dropdown">
             <a class="nav-link dropdown-toggle" id="accountDropdown" href="#" role="button" data-bs-toggle="dropdown">
-              <%= current_user.email %>
+              <%= current_user.username %>
             </a>
             <div class="dropdown-menu dropdown-menu-end">
               <%= link_to "Edit account", edit_user_registration_path, class: "dropdown-item" %>

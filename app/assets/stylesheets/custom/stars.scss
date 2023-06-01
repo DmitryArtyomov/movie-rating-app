@@ -1,0 +1,25 @@
+.stars-container {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  color: $orange;
+  font-size: 1.5rem;
+
+  .star {
+    @extend .bi, .bi-star;
+
+    &.half {
+      @extend .bi-star-half;
+    }
+
+    &.full, &.active {
+      @extend .bi-star-fill;
+    }
+  }
+}
+
+.stars-input {
+  .star {
+    cursor: pointer;
+  }
+}

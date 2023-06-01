@@ -2,7 +2,7 @@
   <%= image_tag movie.image_url, class: "card-img-top", alt: movie.title %>
   <div class="card-body">
     <h5 class="card-title"><%= movie.title %></h5>
-    <p class="card-text">
+    <div class="card-text">
       <div>
         <span class="text-muted">Year:</span>
         <%= movie.year %>
@@ -15,6 +15,7 @@
         <span class="text-muted">Genre:</span>
         <%= movie.genres.map(&:name).join(', ') %>
       </div>
-    </p>
+      <%= render 'movie_rating', movie: movie %>
+    </div>
   </div>
 </div>

@@ -1,3 +1,4 @@
+<%= turbo_stream_from @movie %>
 <div class="row">
   <div class="col-8">
     <h1><%= @movie.title %></h1>
@@ -17,7 +18,19 @@
       <span class="text-muted">Description:</span>
       <%= @movie.description %>
     </div>
+
+    <%= render 'movie_full_rating', movie: @movie %>
+
+    <hr>
+
+    <%= render 'reviews/user_review', review: @user_review %>
+
+    <h4 class="mt-3">User reviews</h4>
+    <div id="reviews">
+      <%= render partial: 'reviews/review', collection: @movie.reviews, as: :review %>
+    </div>
   </div>
+
   <div class="col-4">
     <%= image_tag @movie.image_url, class: "img-fluid", alt: @movie.title %>
   </div>
