@@ -17,6 +17,7 @@
               <%= current_user.username %>
             </a>
             <div class="dropdown-menu dropdown-menu-end">
+              <%= link_to "My profile", profile_path(current_user.username), class: "dropdown-item" %>
               <%= link_to "Edit account", edit_user_registration_path, class: "dropdown-item" %>
               <hr class="dropdown-divider">
               <%= link_to "Sign out", destroy_user_session_path, data: { "turbo-method": :delete }, class: "dropdown-item" %>

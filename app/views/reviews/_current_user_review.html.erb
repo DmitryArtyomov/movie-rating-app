@@ -1,6 +1,6 @@
 <% if current_user %>
   <h4>Your review</h4>
-  <% if @user_review.persisted? %>
+  <% if @current_user_review.persisted? %>
     <%= render 'reviews/show', review: review %>
   <% else %>
     <%= render 'reviews/form', review: review %>

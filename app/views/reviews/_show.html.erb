@@ -1,4 +1,4 @@
-<turbo-frame id="user-review">
+<turbo-frame id="current-user-review">
   <div class="card">
     <div class="card-body">
       <div class="d-flex justify-content-between">
@@ -12,9 +12,7 @@
           <% end %>
         </div>
       </div>
-      <div>
-        <%= review.text %>
-      </div>
+      <div style="white-space: pre-line;"><%= review.text %></div>
     </div>
   </div>
 </turbo-frame>

@@ -1,0 +1,20 @@
+<div id="<%= dom_id review %>">
+  <%= link_to review.movie, class: 'text-decoration-none' do %>
+    <div class="card mb-3">
+      <div class="row g-0">
+        <div class="col-2 col-lg-1">
+          <%= image_tag review.movie.image_url, class: 'img-fluid rounded-start' %>
+        </div>
+        <div class="col-10 col-lg-11">
+          <div class="card-body">
+            <h5 class="card-title"><%= review.movie.title %></h5>
+            <%= render 'shared/rating', value: review.rating %>
+            <% if review.text.present? %>
+              <div style="white-space: pre-line;"><%= review.text %></div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

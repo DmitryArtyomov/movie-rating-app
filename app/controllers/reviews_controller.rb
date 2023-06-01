@@ -39,7 +39,7 @@ class ReviewsController < ApplicationController
 
   def render_review_turbo_partial(partial)
     render turbo_stream: turbo_stream.replace(
-      'user-review',
+      'current-user-review',
       partial: "reviews/#{partial}",
       locals: { review: @review }
     )

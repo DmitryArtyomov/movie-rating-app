@@ -1,0 +1,9 @@
+<%= turbo_stream_from @user %>
+
+<h2 class="text-center"><%= @user.username %> reviews</h2>
+
+<div id="profile-reviews">
+  <% @user.reviews.each do |review| %>
+    <%= render 'reviews/profile_review', review: review %>
+  <% end %>
+</div>

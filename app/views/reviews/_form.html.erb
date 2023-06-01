@@ -1,4 +1,4 @@
-<turbo-frame id="user-review">
+<turbo-frame id="current-user-review">
   <div class="card">
     <div class="card-body">
       <%= bootstrap_form_for(review) do |f| %>
@@ -9,7 +9,7 @@
           </div>
           <%= f.submit "Submit" %>
         </div>
-        <%= f.text_area :text, hide_label: true, wrapper: { class: '' } %>
+        <%= f.text_area :text, hide_label: true, rows: 5, wrapper: { class: '' } %>
       <% end %>
     </div>
   </div>
