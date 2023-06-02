@@ -16,3 +16,11 @@ Create a simple web application that allows users to browse movies, rate them, a
 	- Home/Index View: Display a list of all movies. Each entry should display its title, director, release year, genre, average rating, and a link/button to its individual Movie Detail page.
 	- Movie Detail View: Show all details of a movie, including all user reviews. This page should allow logged-in users to rate the movie and write/edit their review.
 	- User Profile View: Show a user's details and a list of their reviews and ratings.
+7. **Testing**: Write unit and/or integration tests for your models and controllers. This is to test the candidate's ability to write meaningful tests and their understanding of TDD/BDD concepts.
+
+### Installation
+
+1. Pull the repo
+2. Run `bundle install`
+3. Run `rails db:create db:migrate`
+4. Populate the database with movies using `rails data:import`
