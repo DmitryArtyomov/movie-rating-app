@@ -24,3 +24,5 @@ Create a simple web application that allows users to browse movies, rate them, a
 2. Run `bundle install`
 3. Run `rails db:create db:migrate`
 4. Populate the database with movies using `rails data:import`
+5. Run `yarn` to install packages
+6. Start the server with `bin/dev`
